@@ -1,0 +1,554 @@
+/* 🌟 Users Page Styling */
+.users-container {
+  padding: 0rem;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+
+  /* 🔼 Move elements upward */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* push content to the top */
+  min-height: 100vh;
+  padding-top: 3rem; /* adjust this value for spacing from top */
+}
+
+.header-section {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-icon {
+  font-size: 24px;
+}
+
+.page-subtitle {
+  font-size: 0.95rem;
+  color: #bbbbbb;
+  margin-top: 0.3rem;
+}
+
+.loading,
+.empty-state {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 2rem;
+  color: #cccccc;
+}
+
+/* 📊 Table */
+.users-table-wrapper {
+  background: #1c1c1c;
+  border-radius: 12px;
+  padding: 1rem;
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  width: 80%;           /* make it responsive and centered */
+  max-width: 1000px;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.users-table th,
+.users-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.users-table th {
+  background: #2a2a2a;
+  font-weight: 600;
+  color: #dddddd;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.users-table tr:hover td {
+  background: #252525;
+  transition: background 0.2s ease-in-out;
+}
+
+.users-table td {
+  color: #f0f0f0;
+  font-size: 0.95rem;
+}
+
+/* 👤 User Profile Image */
+.user-username-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  flex-shrink: 0;
+}
+
+.users-actions-col {
+  width: 150px;
+  text-align: center;
+}
+
+.users-table th.users-actions-col {
+  text-align: center;
+}
+
+/* 🎯 Custom ACTIONS header positioning */
+.actions-header-text {
+  position: relative;
+  left: -30px; /* Moved to the left */
+}
+
+.users-table td.users-actions-col {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ❌ Delete Button */
+.delete-btn {
+  background: #e53935;
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.25s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.delete-btn:hover {
+  background: #c62828;
+  transform: scale(1.05);
+}
+
+/* 🔧 Action Buttons Group */
+.users-actions-group {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 👁️ View Button */
+.view-btn {
+  background: #2196f3 !important;
+  color: #ffffff !important;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: none !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.25s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.view-btn:hover {
+  background: #1976d2 !important;
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+.view-btn .icon {
+  color: #ffffff !important;
+}
+
+.delete-btn .icon {
+  font-size: 0.85rem;
+}
+
+/* 🪟 User Details Modal */
+.users-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.users-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.users-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #f3f4f6;
+  border: none;
+  color: #374151;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.users-modal-close:hover {
+  background: #e5e7eb;
+}
+
+.users-modal .profile-photo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.users-modal .profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.users-modal .profile-photo:hover {
+  transform: scale(1.05);
+}
+
+.users-modal .modal-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.users-modal .modal-section h3 {
+  color: #fff;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.users-modal .modal-section p {
+  color: #e0e0e0;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.users-modal .modal-section strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.users-modal .status-active {
+  color: #10b981;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+/* 📋 Users Information Section */
+.users-info-section {
+  margin-bottom: 1.5rem;
+  padding: 1.2rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.users-info-section h3 {
+  color: #111827;
+  margin: 0 0 1.2rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.users-info-section p {
+  color: #374151;
+  margin: 0.8rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.users-info-section strong {
+  color: #111827;
+  font-weight: 600;
+  min-width: 120px;
+}
+
+.users-status-online {
+  color: #10b981;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.users-status-online::before {
+  content: "●";
+  color: #10b981;
+  font-size: 0.8rem;
+}
+
+.users-status-offline {
+  color: #6b7280;
+  font-weight: 600;
+  background: rgba(107, 114, 128, 0.15);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.users-status-offline::before {
+  content: "●";
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+/* Add User Button Styles */
+.add-user-button {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.add-user-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+.add-user-button:active {
+  transform: translateY(0);
+}
+
+.add-icon {
+  font-size: 1.1rem;
+}
+
+/* Phone Input Container */
+.phone-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 14px;
+  transition: all 0.3s ease;
+}
+
+.phone-input-container:focus-within {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.phone-flag {
+  width: 25px;
+  height: 18px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.phone-prefix {
+  color: #fff;
+  font-size: 15px;
+  margin-right: 2px;
+}
+
+.phone-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+}
+
+.phone-input::placeholder {
+  color: #bbb;
+}
+
+/* Import modal styles from adminlogin.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  backdrop-filter: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 45px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border: none !important;
+  outline: none !important;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-content h3 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #fff;
+}
+
+.modal-content p {
+  font-size: 14px;
+  color: #aaa;
+  margin: 0 0 25px 0;
+  line-height: 1.5;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-form .input {
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.modal-form .input::placeholder {
+  color: #bbb;
+}
+
+.modal-form .input:focus {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.cancel-button {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: none;
+  color: #ccc;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.reset-button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #848282, #e5e5e5);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #333, #666);
+  transform: translateY(-2px);
+}
+
+.reset-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}

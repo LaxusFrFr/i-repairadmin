@@ -1,0 +1,708 @@
+/* 🌐 Container Layout */
+.feedbacks-container {
+  padding: 0rem;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+
+  /* 🔼 Move elements upward */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* push content to the top */
+  min-height: 100vh;
+  padding-top: 3rem; /* reduced from 3rem to move content higher */
+}
+
+.header-section {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-icon {
+  font-size: 24px;
+}
+
+.page-subtitle {
+  font-size: 0.95rem;
+  color: #bbbbbb;
+  margin-top: 0.3rem;
+}
+
+/* 📊 Stats Overview */
+.feedbacks-content {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 2rem 150px 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem; /* reduced from 3rem to move content higher */
+}
+
+.feedbacks-stats-overview {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 0.5rem; /* reduced from 2rem to move tiles higher */
+  width: 100%;
+  max-width: 1400px;
+}
+
+.feedbacks-stat-card {
+  background: rgba(60, 60, 60, 0.8);
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 0;
+}
+
+.feedbacks-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.feedbacks-stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+.feedbacks-stat-icon.app-feedback {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.feedbacks-stat-icon.technician-ratings {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.feedbacks-stat-icon.average-app-rating {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.feedbacks-stat-icon.average-technician-rating {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.feedbacks-stat-content {
+  flex: 1;
+}
+
+.feedbacks-stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.feedbacks-stat-label {
+  font-size: 0.9rem;
+  color: #bbb;
+  font-weight: 500;
+}
+
+/* 🎯 Main Content */
+.main-content {
+  background: rgba(60, 60, 60, 0.8);
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.2);
+  background: rgba(40, 40, 40, 0.5);
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #bbb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.tab-button.active {
+  background: rgba(102, 126, 234, 0.2);
+  color: #667eea;
+  border-color: rgba(102, 126, 234, 0.4);
+}
+
+.tab-icon {
+  font-size: 1rem;
+}
+
+.tab-label {
+  font-weight: 500;
+}
+
+/* 📋 Content Body */
+.content-body {
+  padding: 2rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.feedback-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.section-controls {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 14px;
+}
+
+.search-input {
+  padding: 10px 12px 10px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 14px;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.search-input::placeholder {
+  color: #fff;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.filter-btn.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: #fff;
+}
+
+/* 🃏 Feedback Grid */
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 0;
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.feedback-card {
+  background: rgba(40, 40, 40, 0.6);
+  border: 1px solid rgba(100, 100, 100, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.feedback-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #667eea;
+  font-size: 16px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.user-email {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.user-role {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.feedback-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.star.empty {
+  color: #444;
+}
+
+.feedback-content {
+  margin-bottom: 1rem;
+}
+
+.feedback-text {
+  color: #e0e0e0;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.feedback-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(100, 100, 100, 0.2);
+}
+
+.feedback-date {
+  color: #999;
+  font-size: 12px;
+}
+
+.technician-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #999;
+  font-size: 12px;
+}
+
+.technician-icon {
+  font-size: 12px;
+}
+
+/* 🔄 Loading & Empty States */
+.loading-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: #bbb;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(102, 126, 234, 0.3);
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Base empty state styling */
+.empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  color: #bbb;
+}
+
+/* App Feedback empty state - completely independent */
+.app-feedback-empty {
+  position: absolute !important;
+  top: 35% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100% !important;
+  z-index: 1 !important;
+}
+
+/* Technician Ratings empty state - completely independent */
+.technician-ratings-empty {
+  position: absolute !important;
+  top: 35% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100% !important;
+  z-index: 1 !important;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.empty-state h4 {
+  color: #999;
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.empty-state p {
+  color: #777;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1200px) {
+  .feedbacks-stats-overview {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  
+  .feedbacks-stat-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .feedbacks-content {
+    padding: 0 1rem;
+  }
+  
+  .feedbacks-stats-overview {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .feedbacks-stat-card {
+    width: 100%;
+    min-width: auto;
+    max-width: none;
+  }
+  
+  .feedback-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .section-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+  
+  .filter-buttons {
+    justify-content: center;
+  }
+  
+  .tab-navigation {
+    flex-wrap: wrap;
+  }
+  
+  .content-body {
+    padding: 1rem;
+  }
+}
+
+/* Enhanced styling for technician ratings and app feedback */
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.technician-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.technician-icon {
+  font-size: 0.8rem;
+  color: #667eea;
+}
+
+.feedback-card {
+  background: rgba(40, 40, 40, 0.6);
+  border: 1px solid rgba(100, 100, 100, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feedback-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.user-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.user-email {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-role {
+  font-size: 0.85rem;
+  color: #28a745;
+  font-weight: 500;
+}
+
+.feedback-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.star {
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.star.filled {
+  color: #ffd700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+.star.empty {
+  color: #444;
+}
+
+.feedback-content {
+  margin-bottom: 1rem;
+}
+
+.feedback-text {
+  color: #ddd;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.feedback-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(100, 100, 100, 0.2);
+}
+
+.feedback-date {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(102, 126, 234, 0.3);
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.loading-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #bbb;
+}
+
+.loading-state p {
+  color: #999;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

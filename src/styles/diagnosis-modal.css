@@ -1,0 +1,90 @@
+.diagnosis-button-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 24px 0 0 0;
+  position: sticky;
+  bottom: 16px; /* keep visible near bottom */
+}
+
+.diagnosis-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.diagnosis-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+}
+
+/* Modal (separate from appointments modal to avoid interference) */
+.diag-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  padding: 20px;
+}
+
+.diag-modal-content {
+  background: #1a1a1a; /* original gray used by appointments modal */
+  border-radius: 12px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.diag-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.diag-modal-header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+.diag-modal-close {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  position: absolute;
+  right: 22px;
+}
+
+.diag-modal-close:hover { color: #fff; background: rgba(255,255,255,0.08); }
+
+.diag-modal-body { padding: 20px 22px; }
+
+.diag-grid { display: grid; gap: 12px; }
+.diag-item { display: flex; gap: 10px; align-items: center; }
+.diag-label { color: #aaa; min-width: 140px; font-weight: 600; }
+.diag-value { color: #fff; font-weight: 500; }
+
+.diag-loading, .diag-error, .diag-empty { color: #ccc; text-align: center; padding: 20px; }
+.diag-error { color: #ff6b6b; }
+
+

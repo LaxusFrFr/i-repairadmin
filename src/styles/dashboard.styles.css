@@ -1,0 +1,159 @@
+/* Dashboard Chart Styles */
+
+/* Charts Container */
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 35px;
+  max-width: 800px;
+  margin: 0 auto 35px auto;
+}
+
+/* Chart Cards */
+.chart-card {
+  background: rgba(60, 60, 60, 0.8);
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: transform .25s ease, box-shadow .25s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.chart-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+}
+
+/* Chart Headers */
+.chart-title {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.chart-subtitle {
+  color: #aaa;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Repair Requests Chart */
+.repair-requests-chart {
+  height: 200px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 4px;
+  padding: 20px;
+}
+
+.repair-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  max-width: 30px;
+  min-width: 25px;
+}
+
+.repair-bar-fill {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 8px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  min-height: 20px;
+}
+
+.repair-bar-label {
+  color: #aaa;
+  font-size: 8px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Services Distribution Chart */
+.services-distribution-chart {
+  height: 200px;
+  position: relative;
+  padding: 10px;
+}
+
+.pie-chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pie-chart {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.pie-chart-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(30, 30, 30, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+}
+
+.legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legend-icon {
+  font-size: 6px;
+  color: #fff;
+}
+
+.legend-label {
+  color: #fff;
+}
+
+.legend-percentage {
+  color: #aaa;
+  font-weight: bold;
+}

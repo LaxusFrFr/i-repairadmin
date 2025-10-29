@@ -1,0 +1,329 @@
+/* 🌟 Registered Accounts Styling (Freelance & Shops) */
+.registered-container {
+  padding: 0rem;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+
+  /* 🔼 Move elements upward - same as technicians */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* push content to the top */
+  min-height: 100vh;
+  padding-top: 3rem; /* adjust this value for spacing from top */
+}
+
+.header-section {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.page-subtitle {
+  font-size: 0.95rem;
+  color: #bbbbbb;
+  margin-top: 0.3rem;
+}
+
+.loading,
+.empty-state {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-top: 2rem;
+}
+
+/* 📦 Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.registered-card {
+  background: linear-gradient(160deg, rgba(30,30,30,0.95), rgba(10,10,10,0.95));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.registered-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.55);
+}
+
+.registered-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #f9f9f9;
+}
+
+.registered-card .details-btn {
+  margin-top: 1rem;
+  background: #2563eb;
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: block;
+  align-items: center;
+  gap: 4px;
+  width: auto;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background 0.25s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.registered-card .details-btn:hover {
+  background: #1e40af;
+  transform: scale(1.05);
+}
+
+/* 📌 Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: block; /* stop flex centering */
+  z-index: 50;
+}
+
+.modal {
+  position: absolute; /* allows free positioning */
+  top: 165px;          /* adjust as much as you want */
+  left: 50%;          /* horizontal center */
+  transform: translateX(-50%); /* center by X-axis */
+  background: #1c1c1c;
+  padding: 2rem;
+  border-radius: 18px;
+  max-width: 500px;
+  width: 95%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.65);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.modal p {
+  margin: 0.6rem 0;
+  color: #e6e6e6;
+  font-size: 0.95rem;
+}
+
+/* Close button as X in top-right corner */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+.close-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.delete-btn {
+  background: #e53935;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.25s ease, transform 0.15s ease-in-out;
+}
+
+.delete-btn:hover {
+  background: #c62828;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ✨ Shop Modal Styles - White/Gray Theme */
+.shop-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* position slightly upper/lower via padding */
+  padding-top: 110px; /* adjust this to move lower or higher */
+  z-index: 50;
+  background: transparent;
+}
+
+.shop-modal {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 95%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.65);
+  position: relative;
+  animation: shopModalFadeIn 0.3s ease;
+  color: #111111;
+}
+
+@keyframes shopModalFadeIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.9); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+.shop-modal h2 {
+  color: #111;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.shop-modal p {
+  color: #333;
+  margin: 0.4rem 0;
+  line-height: 1.5;
+}
+
+.shop-modal-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.shop-modal-section h3 {
+  color: #333;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop-modal-section p {
+  text-align: left;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.shop-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.shop-modal-close:hover {
+  background: #f0f0f0;
+  color: #000;
+}
+
+.shop-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ddd;
+}
+
+.shop-delete-btn {
+  background: #e53935;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.25s ease, transform 0.15s ease-in-out;
+}
+
+.shop-delete-btn:hover {
+  background: #c62828;
+  transform: scale(1.05);
+}
+
+/* Custom scrollbar for shop modal */
+.shop-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.shop-modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.shop-modal::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.shop-modal::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
